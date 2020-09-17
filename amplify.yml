@@ -1,20 +1,12 @@
 version: 1
-backend:
-  phases:
-    preBuild:
-      commands:
-        - npm install -g @aws-amplify/cli@4.11.0
-    build:
-      commands:
-        - amplifyPush --simple
 frontend:
   phases:
     preBuild:
       commands:
-        - yarn install
+        - npm ci
     build:
       commands:
-        - yarn run build
+        - npm run build
   artifacts:
     baseDirectory: build
     files:
